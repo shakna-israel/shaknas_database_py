@@ -44,6 +44,8 @@ print(db.connection)
 
 * If you _don't_ supply a `row_factory`, then you'll get the magic that lets you access rows by index, string key or attribute. (e.g. `row[0] == row['thread'] == row.thread` in the above example).
 
+	* An unknown value being accessed will raise a `KeyError`.
+
 * If you supply a `row_factory`, then it'll be installed as per usual.
 
 * Other arguments are passed to the `connect` function of `sql_engine`.

@@ -26,6 +26,9 @@ def dict_factory(cursor, row):
 			except TypeError:
 				# Raise a KeyError, which feels Pythonic dict-like and intuitive
 				raise KeyError
+		except IndexError:
+			# Raise a KeyError for consistency.
+			raise KeyError
 
 	R = collections.namedtuple('Row', keys)
 	R.oldgetitem = R.__getitem__
