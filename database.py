@@ -67,6 +67,5 @@ class Database(object):
 
 	def __del__(self):
 		# Auto-commit DB in closing...
-		if self.rowcount > 0:
-			self.db.commit()
+		self.db.commit()
 		self.db.close()
